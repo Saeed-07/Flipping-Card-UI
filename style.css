@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+
+section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #121321;
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+    transform: translate(-150px, -100px);
+    background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+}
+
+section::after {
+    content: "";
+    position: absolute;
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+    transform: translate(150px, 100px);
+    background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+}
+
+.container span {
+    color: white;
+    font-family: Poppins, Arial;
+}
+
+.container {
+    position: relative;
+    height: 245px;
+    width: 375px;
+    z-index: 100;
+    backdrop-filter: blur(25px); 
+    border-radius: 26px;
+    transition: all 0.6s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+}
+
+.container .card {
+    position: absolute;
+}
+.container .card-front-side {
+    height: 100%;
+    width: 100%;
+    border-radius: 26px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.upper-part {
+    display: grid;
+    grid-template-columns: 45px 230px 60px;
+    padding: 25px 20px 20px 20px;
+}
+.card-front-side img {
+    width: 50px;
+}
+
+.upper-part .text {
+    margin-left: 18px;
+    padding-top: 3px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.middle-part {
+    padding: 20px 20px 10px 20px;
+}
+
+.middle-part .text {
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.card-number {
+    margin-top: 3px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.lower-part {
+    padding: 0 20px;
+    margin: 5px 0;
+    display: grid;
+    align-items: end;
+    grid-template-columns: 260px 80px;
+}
+
+.card-owner-name {
+    display: flex;
+    align-items: end;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.validity {
+    margin-top: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.validity .text {
+    font-size: 10px;
+}
+
+/* Back-side of the card */
+
+.container .card-back-side {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    border-radius: 26px;
+    background-color: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+}
+
+.top-part {
+    padding: 20px 30px 10px 20px;
+    font-size: 8px;
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.black-strip {
+    background-color: black;
+    height: 40px;
+}
+
+.white-strip {
+    margin: 15px 80px 10px 25px;
+    padding-top: 3px;
+    height: 40px;
+    border-radius: 3px;
+    position: relative;
+    background-color: white;
+}
+
+.grey-strip {
+    background-color: rgb(239, 237, 239);
+    height: 5px;
+    margin: 2px 0 4px 0;
+
+}
+
+.cvv-code {
+    position: absolute;
+    padding: 0 5px 0 1px;
+    border-radius: 4px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height: 25px;
+    right: -36px;
+    top: 10px;
+    background-color: white;
+}
+
+.cvv-code span {
+    color: black;
+    font-style: italic;
+}
+
+.bottom-part {
+    padding: 20px 30px 10px 25px;
+    font-size: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.container:hover .card-front-side {
+    opacity: 0;
+}
+
+.container:hover .card-back-side {
+    opacity: 1;
+}
+
+.container:hover {
+    transform: rotateY(180deg);   
+}
